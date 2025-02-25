@@ -6,7 +6,6 @@ class IsOwnerOrReadOnly(BasePermission):
     """
 
     def has_object_permission(self, request, view, obj):
-        print(f"Checking permission for user: {request.user}, target object: {obj}")
         if request.method in SAFE_METHODS:
             return True
 
